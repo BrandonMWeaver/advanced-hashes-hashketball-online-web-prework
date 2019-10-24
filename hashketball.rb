@@ -112,7 +112,9 @@ def num_points_scored(player)
   
   hash[:home][:players].each do |info|
     info.each do |member|
-      puts member
+      if member == player
+        return member[:points]
+      end
     end
   end
   
