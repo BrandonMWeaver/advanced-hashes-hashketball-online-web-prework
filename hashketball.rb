@@ -115,6 +115,7 @@ def num_points_scored(player)
     if hash[:home][:players][index][:player_name] == player
       return hash[:home][:players][index][:points]
     end
+    index += 1
   end
   
 end
