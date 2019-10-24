@@ -134,7 +134,7 @@ def shoe_size(player)
   index = 0
   while index < hash[:home][:players].size do
     if hash[:home][:players][index][:player_name] == player
-      return hash[:home][:players][index][:shoe_size]
+      return hash[:home][:players][index][:shoe]
     end
     index += 1
   end
@@ -142,7 +142,7 @@ def shoe_size(player)
   index = 0
   while index < hash[:away][:players].size do
     if hash[:away][:players][index][:player_name] == player
-      return hash[:away][:players][index][:shoe_size]
+      return hash[:away][:players][index][:shoe]
     end
     index += 1
   end
