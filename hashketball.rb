@@ -249,6 +249,7 @@ def big_shoe_rebounds
     index += 1
   end
   
+  index = 0
   while index < hash[:away][:players].size do
     player_size = hash[:away][:players][index][:shoe]
     if player_size > size
@@ -314,4 +315,32 @@ def winning_team
   end
   
   return winner
+end
+
+def player_with_longest_name
+  hash = game_hash
+  length = 0
+  longest_name = ""
+  
+  index = 0
+  while index < hash[:home][:players].size do
+    name = hash[:home][:players][index][:player_name]
+    if name.length > length
+      length = name.length
+      longest_name = name
+    end
+    index += 1
+  end
+  
+  index = 0
+  while index < hash[:away][:players].size do
+    name = hash[:away][:players][index][:player_name]
+    if name.length > length
+      length = name.length
+      longest_name = name
+    end
+    index += 1
+  end
+  
+  return longest_name
 end
