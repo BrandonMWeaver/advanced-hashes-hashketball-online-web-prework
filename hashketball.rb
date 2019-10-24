@@ -174,20 +174,10 @@ end
 def player_numbers(team_name)
   hash = game_hash
   
-  index = 0
-  while index < hash[:home][:players].size do
-    if hash[:home][:players][index][:player_name] == player
-      return hash[:home][:players][index][:points]
-    end
-    index += 1
-  end
+  if hash[:home][:team_name] == team_name
+    
+  elsif hash[:away][:team_name] == team_name
   
-  index = 0
-  while index < hash[:away][:players].size do
-    if hash[:away][:players][index][:player_name] == player
-      return hash[:away][:players][index][:points]
-    end
-    index += 1
   end
-  
+
 end
