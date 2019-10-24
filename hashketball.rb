@@ -346,5 +346,29 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton?
+  hash = game_hash
+  steals = 0
+  player = ""
   
+  index = 0
+  while index < hash[:home][:players].size do
+    player_steals = hash[:home][:players][index][:steals]
+    if player_steals > steals
+      steals = player_steals
+      player = hash[:home][:players][index][:player_name]
+    end
+    index += 1
+  end
+  
+  index = 0
+  while index < hash[:away][:players].size do
+    player_steals = hash[:away][:players][index][:steals]
+    if player_steals > steals
+      steals = player_steals
+      player = hash[:away][:players][index][:player_name]
+    end
+    index += 1
+  end
+  
+  return player == player_with_longest_name
 end
