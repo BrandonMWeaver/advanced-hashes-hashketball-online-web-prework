@@ -31,6 +31,10 @@ def game_hash
       ]
     }
   }
-  pp hash
+  
   return hash
+end
+
+def num_points_scored
+  game_hash
 end
