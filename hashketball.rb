@@ -286,5 +286,6 @@ def most_points_scored
     index += 1
   end
   
+  puts player
   return player
 end
