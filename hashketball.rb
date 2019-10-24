@@ -240,7 +240,9 @@ def big_shoe_rebounds
   
   index = 0
   while index < hash[:home][:players].size do
-    r = hash[:home][:players][index][:shoe] >
+    player_size = hash[:home][:players][index][:shoe]
+    size = player_size > size ? player_size : size
+    index += 1
   end
   
 end
