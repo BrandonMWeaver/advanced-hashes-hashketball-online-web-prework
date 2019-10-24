@@ -289,30 +289,29 @@ def most_points_scored
   return player
 end
 
-def most_points_scored
+def winning_team
   hash = game_hash
-  points = 0
-  player = ""
+  home_points = 0
+  away_points = 0
+  winner = ""
   
   index = 0
   while index < hash[:home][:players].size do
-    player_points = hash[:home][:players][index][:points]
-    if player_points > points
-      points = player_points
-      player = hash[:home][:players][index][:player_name]
-    end
+    home_points += hash[:home][:players][index][:points]
     index += 1
   end
   
   index = 0
   while index < hash[:away][:players].size do
-    player_points = hash[:away][:players][index][:points]
-    if player_points > points
-      points = player_points
-      player = hash[:away][:players][index][:player_name]
-    end
+    away_points += hash[:away][:players][index][:points]
     index += 1
   end
   
-  return player
+  if home_points > away_points
+    winner = hash[:home][:team_name]
+  else
+    winner = hash[:away][:team_name]
+  end
+  
+  return winner
 end
