@@ -31,6 +31,6 @@ def game_hash
       ]
     }
   }
-  
+  pp hash
   return hash
 end
