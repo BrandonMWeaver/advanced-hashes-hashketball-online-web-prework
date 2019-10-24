@@ -235,5 +235,12 @@ def player_stats(player)
 end
 
 def big_shoe_rebounds
+  hash = game_hash
+  size = 0
+  
+  index = 0
+  while index < hash[:home][:players].size do
+    r = hash[:home][:players][index][:shoe] >
+  end
   
 end
