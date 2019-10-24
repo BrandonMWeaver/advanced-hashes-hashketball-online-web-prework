@@ -261,6 +261,30 @@ def big_shoe_rebounds
   return rebounds
 end
 
-def most_scored_points
+def most_points_scored
+  hash = game_hash
+  points = 0
+  player = ""
   
+  index = 0
+  while index < hash[:home][:players].size do
+    player_points = hash[:home][:players][index][:points]
+    if player_points > points
+      points = player_points
+      player = hash[:home][:players][index][:player_name]
+    end
+    index += 1
+  end
+  
+  index = 0
+  while index < hash[:home][:players].size do
+    player_points = hash[:home][:players][index][:points]
+    if player_points > points
+      points = player_points
+      player = hash[:home][:players][index][:player_name]
+    end
+    index += 1
+  end
+  
+  return player
 end
