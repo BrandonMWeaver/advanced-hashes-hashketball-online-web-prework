@@ -277,15 +277,14 @@ def most_points_scored
   end
   
   index = 0
-  while index < hash[:home][:players].size do
-    player_points = hash[:home][:players][index][:points]
+  while index < hash[:away][:players].size do
+    player_points = hash[:away][:players][index][:points]
     if player_points > points
       points = player_points
-      player = hash[:home][:players][index][:player_name]
+      player = hash[:away][:players][index][:player_name]
     end
     index += 1
   end
   
-  puts player
   return player
 end
