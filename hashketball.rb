@@ -116,4 +116,5 @@ def num_points_scored(player)
         return member[:points]
       end
     end
+  end
 end
