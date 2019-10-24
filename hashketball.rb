@@ -118,4 +118,12 @@ def num_points_scored(player)
     index += 1
   end
   
+  index = 0
+  while index < hash[:away][:players].size do
+    if hash[:away][:players][index][:player_name] == player
+      return hash[:away][:players][index][:points]
+    end
+    index += 1
+  end
+  
 end
