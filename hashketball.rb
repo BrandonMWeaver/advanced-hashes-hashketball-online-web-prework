@@ -109,11 +109,5 @@ end
 
 def num_points_scored(player)
   hash = game_hash
-  
-  hash[:home][:players].each do |info|
-    info.each do |member|
-      pp member
-    end
-  end
-  
+  return hash[:away][:players][0][:points]
 end
