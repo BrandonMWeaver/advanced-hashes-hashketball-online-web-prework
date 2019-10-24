@@ -195,3 +195,25 @@ def player_numbers(team_name)
   
   return temp
 end
+
+def player_stats(player)
+  hash = game_hash
+  temp = {}
+  
+  index = 0
+  while index < hash[:home][:players].size do
+    if hash[:home][:players][index][:player_name] == player
+      temp[:number] = hash[:home][:players][index][:number]
+    end
+    index += 1
+  end
+  
+  index = 0
+  while index < hash[:away][:players].size do
+    if hash[:away][:players][index][:player_name] == player
+      return hash[:away][:players][index][:shoe]
+    end
+    index += 1
+  end
+  
+end
