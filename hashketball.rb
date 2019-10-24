@@ -237,12 +237,26 @@ end
 def big_shoe_rebounds
   hash = game_hash
   size = 0
+  rebounds = 0
   
   index = 0
   while index < hash[:home][:players].size do
     player_size = hash[:home][:players][index][:shoe]
-    size = player_size > size ? player_size : size
+    if player_size > size
+      size = player_size
+      rebounds = hash[:home][:players][index][:rebounds]
+    end
     index += 1
   end
   
+  while index < hash[:away][:players].size do
+    player_size = hash[:away][:players][index][:shoe]
+    if player_size > size
+      size = player_size
+      rebounds = hash[:away][:players][index][:rebounds]
+    end
+    index += 1
+  end
+  
+  return rebounds
 end
