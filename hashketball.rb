@@ -204,6 +204,13 @@ def player_stats(player)
   while index < hash[:home][:players].size do
     if hash[:home][:players][index][:player_name] == player
       temp[:number] = hash[:home][:players][index][:number]
+      temp[:shoe] = hash[:home][:players][index][:shoe]
+      temp[:points] = hash[:home][:players][index][:points]
+      temp[:rebounds] = hash[:home][:players][index][:rebounds]
+      temp[:assists] = hash[:home][:players][index][:assists]
+      temp[:steals] = hash[:home][:players][index][:steals]
+      temp[:blocks] = hash[:home][:players][index][:blocks]
+      temp[:slam_dunks] = hash[:home][:players][index][:slam_dunks]
     end
     index += 1
   end
@@ -211,9 +218,17 @@ def player_stats(player)
   index = 0
   while index < hash[:away][:players].size do
     if hash[:away][:players][index][:player_name] == player
-      return hash[:away][:players][index][:shoe]
+      temp[:number] = hash[:home][:players][index][:number]
+      temp[:shoe] = hash[:home][:players][index][:shoe]
+      temp[:points] = hash[:home][:players][index][:points]
+      temp[:rebounds] = hash[:home][:players][index][:rebounds]
+      temp[:assists] = hash[:home][:players][index][:assists]
+      temp[:steals] = hash[:home][:players][index][:steals]
+      temp[:blocks] = hash[:home][:players][index][:blocks]
+      temp[:slam_dunks] = hash[:home][:players][index][:slam_dunks]
     end
     index += 1
   end
   
+  return temp
 end
